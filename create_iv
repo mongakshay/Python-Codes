@@ -1,0 +1,12 @@
+#!/usr/bin/python
+import os
+import pickle
+
+iv = os.urandom(16)
+
+try:
+	with open ('iv_text_file', "w") as fhandle:
+		pickle.dump(iv,fhandle)
+except IOError as e:
+	print "An error occured while writing file",e
+	raise
